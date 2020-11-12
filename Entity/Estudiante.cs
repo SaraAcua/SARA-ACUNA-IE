@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Entity
 {
-    class Estudiante
+   public class Estudiante
     {
         public Estudiante() { }
         public Estudiante(string tipoId, string numeroId, string nombre,  string grado, string Intitucion)
@@ -29,4 +29,4 @@ namespace Entity
         }
     }
 }
-}
+

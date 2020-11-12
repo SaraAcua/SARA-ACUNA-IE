@@ -44,6 +44,7 @@ namespace PresentacionGui
             this.btnConsultarIes.TabIndex = 0;
             this.btnConsultarIes.Text = "Consultar";
             this.btnConsultarIes.UseVisualStyleBackColor = true;
+            this.btnConsultarIes.Click += new System.EventHandler(this.btnConsultarIes_Click);
             // 
             // cmboIes
             // 

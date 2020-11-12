@@ -42,6 +42,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Class1.cs" />
+    <Compile Include="InstitucionService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -49,9 +50,9 @@
       <Project>{6ac03758-664d-4a8a-a803-22213b06b7e7}</Project>
       <Name>Dall</Name>
     </ProjectReference>
-    <ProjectReference Include="..\PresentacionGui\PresentacionGui.csproj">
-      <Project>{bad8673d-993c-45a6-b40b-fb63b79a88cd}</Project>
-      <Name>PresentacionGui</Name>
+    <ProjectReference Include="..\Entity\Entity.csproj">
+      <Project>{293a8b72-f2be-49fe-9480-8f2ead6ea1dd}</Project>
+      <Name>Entity</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

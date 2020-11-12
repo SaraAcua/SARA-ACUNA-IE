@@ -45,11 +45,5 @@
     <Compile Include="Institucion.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\PresentacionGui\PresentacionGui.csproj">
-      <Project>{bad8673d-993c-45a6-b40b-fb63b79a88cd}</Project>
-      <Name>PresentacionGui</Name>
-    </ProjectReference>
-  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

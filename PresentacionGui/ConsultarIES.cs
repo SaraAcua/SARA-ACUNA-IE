@@ -38,11 +38,12 @@ namespace PresentacionGui
             if (cmboIes.Text.Equals("Todos"))
             {
                 ConsultarTodos();
-                //lblConteo.Text = "----";
+                ContarCupoSDisponible();
             }
             else
             {
-               
+                FiltroTipo();
+                ContarCupoSDisponible();
             }
 
 
@@ -60,6 +61,37 @@ namespace PresentacionGui
             {
                 MessageBox.Show(respuesta.Message, "Informacion de Consulta");
             }
+
+        }
+        private void FiltroTipo()
+        {
+            var response = service.ConsultarTipo(cmboIes.Text);
+            if (response.Error == false)
+            {
+                dataGVIes .DataSource = response.Institucions;
+            }
+            else
+            {
+                MessageBox.Show(response.Message);
+            }
+        }
+        private void ContarCupoSDisponible()
+        {
+            int total = 0;
+            foreach (DataGridViewRow row in dataGVIes.Rows)
+            {
+                total += Convert.ToInt32(row.Cells["CupoDisponible"].Value);
+                service.Contarcupo(total);
+                if (total !=0)
+                {
+                    lblConteocuposdisponibles.Text = Convert.ToString(total);
+                }
+                else{
+                    lblConteocuposdisponibles.Text = "0";
+                }
+            }
+        }
+
         }
     }
-}
+

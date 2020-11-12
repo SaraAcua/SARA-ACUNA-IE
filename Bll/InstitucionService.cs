@@ -41,6 +41,39 @@ namespace Bll
             }
 
         }
+        public IntitucionResponse ConsultarTipo(string tipo)
+        {
+            try
+            {
+                List<Institucion> institucion = institucionRepository.FiltroPorTipo(tipo);
+                if (institucion != null)
+                {
+                    var response = new IntitucionResponse(institucion);
+                    return response;
+                }
+                else
+                {
+                    var response = new IntitucionResponse("No se encontro ");
+                    return response;
+                }
+
+            }
+            catch (Exception e)
+            {
+                var response = new IntitucionResponse("Error de Aplicacion:" + e.Message);
+                return response;
+            }
+
+        }
+        public int Contarcupo(int cupo)
+        {
+            int conteo = 0;
+            conteo = institucionRepository.ContarCupo(cupo);
+            return conteo;
+        }
+
+
+
     }
     public class IntitucionResponse
     {

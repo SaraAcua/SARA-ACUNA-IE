@@ -33,6 +33,8 @@ namespace PresentacionGui
             this.cmboIes = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.dataGVIes = new System.Windows.Forms.DataGridView();
+            this.lblConteocuposdisponibles = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGVIes)).BeginInit();
             this.SuspendLayout();
             // 
@@ -68,8 +70,26 @@ namespace PresentacionGui
             this.dataGVIes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGVIes.Location = new System.Drawing.Point(34, 137);
             this.dataGVIes.Name = "dataGVIes";
-            this.dataGVIes.Size = new System.Drawing.Size(487, 172);
+            this.dataGVIes.Size = new System.Drawing.Size(487, 113);
             this.dataGVIes.TabIndex = 3;
+            // 
+            // lblConteocuposdisponibles
+            // 
+            this.lblConteocuposdisponibles.AutoSize = true;
+            this.lblConteocuposdisponibles.Location = new System.Drawing.Point(362, 284);
+            this.lblConteocuposdisponibles.Name = "lblConteocuposdisponibles";
+            this.lblConteocuposdisponibles.Size = new System.Drawing.Size(19, 13);
+            this.lblConteocuposdisponibles.TabIndex = 4;
+            this.lblConteocuposdisponibles.Text = "----";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(252, 284);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(92, 13);
+            this.label2.TabIndex = 5;
+            this.label2.Text = "Cupos disponibles";
             // 
             // ConsultarIES
             // 
@@ -77,6 +97,8 @@ namespace PresentacionGui
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.AppWorkspace;
             this.ClientSize = new System.Drawing.Size(568, 380);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.lblConteocuposdisponibles);
             this.Controls.Add(this.dataGVIes);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.cmboIes);
@@ -96,5 +118,7 @@ namespace PresentacionGui
         private System.Windows.Forms.ComboBox cmboIes;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView dataGVIes;
+        private System.Windows.Forms.Label lblConteocuposdisponibles;
+        private System.Windows.Forms.Label label2;
     }
 }

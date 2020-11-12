@@ -76,6 +76,20 @@ namespace Dall
                 estudiante.Institucion = vectorContratacion[4];
             return estudiante;
         }
+
+        public List<Institucion> FiltroPorTipo(string tipo)
+        {
+            List<Institucion> institucions = ConsultarTodos();
+            List<Institucion> institucionesFiltradas =
+                (from c in institucions
+                 where c.NombreInstitucion == tipo
+                 select c).ToList();
+            return institucionesFiltradas;
+        }
+        public int ContarCupo(int cupo)
+        {
+            return ConsultarTodos().Count(p => p.CupoDisponible.Equals(cupo));
+        }
     }
 
 }

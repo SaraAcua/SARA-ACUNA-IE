@@ -52,6 +52,12 @@
     <Compile Include="ConsultarIES.Designer.cs">
       <DependentUpon>ConsultarIES.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormRegistroEstudiante.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormRegistroEstudiante.Designer.cs">
+      <DependentUpon>FormRegistroEstudiante.cs</DependentUpon>
+    </Compile>
     <Compile Include="Principal.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -62,6 +68,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="ConsultarIES.resx">
       <DependentUpon>ConsultarIES.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormRegistroEstudiante.resx">
+      <DependentUpon>FormRegistroEstudiante.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Principal.resx">
       <DependentUpon>Principal.cs</DependentUpon>

@@ -12,8 +12,9 @@ namespace Dall
     public class InstitucionRepository
     {
         private readonly string FileName = "IE.txt";
+        private readonly string FileNameEs = "Estudiantes.txt";
 
-      
+
         Estudiante estudiante;
         public List<Institucion> ConsultarTodos()
         {
@@ -29,6 +30,53 @@ namespace Dall
             reader.Close();
             file.Close();
             return lista;
+        }
+
+
+        public void Guardar(Estudiante estudiante)
+        {
+            FileStream file = new FileStream(FileNameEs, FileMode.Append);
+            StreamWriter writer = new StreamWriter(file);
+            writer.WriteLine($"{estudiante.TipoId};{estudiante.NumeroId};" +
+              $"{estudiante.Nombre};{estudiante.Grado};" +
+              $"{estudiante.Institucion};");
+
+            writer.Close();
+            file.Close();
+        }
+        private bool Encontrado(string idEstudiante, string idEstudianteBuscado)
+        {
+            return idEstudiante == idEstudianteBuscado;
+
+        }
+        public List<Estudiante> ConsultarAtodos()
+        {
+            List<Estudiante> estudiantes = new List<Estudiante>();
+            FileStream file = new FileStream(FileNameEs, FileMode.OpenOrCreate, FileAccess.Read);
+            StreamReader reader = new StreamReader(file);
+            string linea = string.Empty;
+
+            while ((linea = reader.ReadLine()) != null)
+            {
+                Estudiante estudiante = Mapeo(linea);
+                estudiantes.Add(estudiante);
+            }
+            reader.Close();
+            file.Close();
+            return estudiantes;
+
+        }
+        public Estudiante Buscar(string numeroId)
+        {
+            List<Estudiante> liquidacionCuotaModeradoras = ConsultarAtodos();
+            foreach (var item in liquidacionCuotaModeradoras)
+            {
+                if (Encontrado(item.NumeroId, numeroId))
+                {
+                    return item;
+                }
+            }
+            return null;
         }
         private Institucion Map(string linea)
         {
@@ -48,32 +96,14 @@ namespace Dall
         {
            
             char delimeter = ';';
-            string[] vectorContratacion = linea.Split(delimeter);
-            if (vectorContratacion[0] == "IE NACIONAL LOPERENA")
-            {
+            string[] vector = linea.Split(delimeter);
                 estudiante = new Estudiante();
-            }
-            if (vectorContratacion[0] == "PUDENCIA DAZA")
-            {
-                estudiante = new Estudiante();
-            }
-            if (vectorContratacion[0]=="SAN JOAQUIN")
-            {
-                estudiante = new Estudiante();
-            }
-            if ((vectorContratacion[0] == "FRANCISCO MOLINA SANCHEZ"))
-            {
-                estudiante = new Estudiante();
-            }
-            else
-            {
-            }
-
-            estudiante.TipoId= vectorContratacion[0];
-            estudiante.NumeroId= vectorContratacion[1];
-                estudiante.Nombre= vectorContratacion[2];
-               estudiante.Grado = vectorContratacion[3];
-                estudiante.Institucion = vectorContratacion[4];
+          
+            estudiante.TipoId= vector[0];
+            estudiante.NumeroId= vector[1];
+                estudiante.Nombre= vector[2];
+               estudiante.Grado = vector[3];
+                estudiante.Institucion = vector[4];
             return estudiante;
         }
 

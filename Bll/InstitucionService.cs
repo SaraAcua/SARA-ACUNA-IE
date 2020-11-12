@@ -71,6 +71,26 @@ namespace Bll
             conteo = institucionRepository.ContarCupo(cupo);
             return conteo;
         }
+        public string Guardar(Estudiante estudiante)
+        {
+
+            try
+            {
+
+                if (institucionRepository.Buscar(estudiante.NumeroId) == null)
+                {
+                    institucionRepository.Guardar(estudiante);
+
+                    return "Se guardaron los datos de manera exitosa";
+                }
+                return "No es posible guardar los datos";
+            }
+            catch (Exception e)
+            {
+                return "Error:" + e.Message;
+            }
+        }
+
 
 
 

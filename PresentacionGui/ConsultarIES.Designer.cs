@@ -1,0 +1,99 @@
+﻿
+namespace PresentacionGui
+{
+    partial class ConsultarIES
+    {
+        /// <summary>
+        /// Required designer variable.
+        /// </summary>
+        private System.ComponentModel.IContainer components = null;
+
+        /// <summary>
+        /// Clean up any resources being used.
+        /// </summary>
+        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
+        }
+
+        #region Windows Form Designer generated code
+
+        /// <summary>
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
+        /// </summary>
+        private void InitializeComponent()
+        {
+            this.btnConsultarIes = new System.Windows.Forms.Button();
+            this.cmboIes = new System.Windows.Forms.ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.dataGVIes = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGVIes)).BeginInit();
+            this.SuspendLayout();
+            // 
+            // btnConsultarIes
+            // 
+            this.btnConsultarIes.Location = new System.Drawing.Point(184, 69);
+            this.btnConsultarIes.Name = "btnConsultarIes";
+            this.btnConsultarIes.Size = new System.Drawing.Size(75, 23);
+            this.btnConsultarIes.TabIndex = 0;
+            this.btnConsultarIes.Text = "Consultar";
+            this.btnConsultarIes.UseVisualStyleBackColor = true;
+            // 
+            // cmboIes
+            // 
+            this.cmboIes.FormattingEnabled = true;
+            this.cmboIes.Location = new System.Drawing.Point(57, 71);
+            this.cmboIes.Name = "cmboIes";
+            this.cmboIes.Size = new System.Drawing.Size(121, 21);
+            this.cmboIes.TabIndex = 1;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(63, 52);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(68, 13);
+            this.label1.TabIndex = 2;
+            this.label1.Text = "Consulta IES";
+            // 
+            // dataGVIes
+            // 
+            this.dataGVIes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGVIes.Location = new System.Drawing.Point(34, 137);
+            this.dataGVIes.Name = "dataGVIes";
+            this.dataGVIes.Size = new System.Drawing.Size(487, 172);
+            this.dataGVIes.TabIndex = 3;
+            // 
+            // ConsultarIES
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.ClientSize = new System.Drawing.Size(568, 380);
+            this.Controls.Add(this.dataGVIes);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.cmboIes);
+            this.Controls.Add(this.btnConsultarIes);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Name = "ConsultarIES";
+            this.Text = "ConsultarIES";
+            ((System.ComponentModel.ISupportInitialize)(this.dataGVIes)).EndInit();
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
+        }
+
+        #endregion
+
+        private System.Windows.Forms.Button btnConsultarIes;
+        private System.Windows.Forms.ComboBox cmboIes;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.DataGridView dataGVIes;
+    }
+}

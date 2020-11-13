@@ -148,6 +148,7 @@ namespace Dall
         {
             return ConsultarTodosEs().Count(p => p.Nombre.Equals(estudiante));
         }
+
     }
 
 }

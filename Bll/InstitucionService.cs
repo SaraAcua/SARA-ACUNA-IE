@@ -65,6 +65,30 @@ namespace Bll
             }
 
         }
+        public EstudianteResponse ConsultarEsTodos()
+        {
+            try
+            {
+                List<Estudiante> estudiantes = institucionRepository.ConsultarAtodos();
+                if (estudiantes != null)
+                {
+                    var response = new EstudianteResponse(estudiantes);
+                    return response;
+                }
+                else
+                {
+                    var response = new EstudianteResponse("No se encontro el registro ");
+                    return response;
+                }
+
+            }
+            catch (Exception e)
+            {
+                var response = new EstudianteResponse("Error de Aplicacion:" + e.Message);
+                return response;
+            }
+
+        }
         public IntitucionResponse ConsultarTipo(string tipo)
         {
             try
@@ -95,12 +119,14 @@ namespace Bll
             conteo = institucionRepository.ContarCupo(cupo);
             return conteo;
         }
-        public int ContarEs(int Estudiante)
+        public int ContarEs(string estudiante)
         {
             int conteo = 0;
-            conteo = institucionRepository.ContarCupo(Estudiante);
+            conteo = institucionRepository.ContarEs(estudiante);
             return conteo;
         }
+        
+
         public string Guardar(Estudiante estudiante)
         {
 

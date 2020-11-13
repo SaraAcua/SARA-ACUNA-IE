@@ -27,6 +27,7 @@ namespace PresentacionGui
             cmboGrado.Items.Add("PRE-JARDIN");
             cmboGrado.Items.Add("TRANSICION");
             cmboGrado.DropDownStyle = ComboBoxStyle.DropDownList;
+            cmboTipoId.DropDownStyle = ComboBoxStyle.DropDownList;
             cmboTipoId.Items.Add("RC");
             cmboTipoId.Items.Add("TI");
             cmboTipoId.Items.Add("CC");
@@ -37,7 +38,6 @@ namespace PresentacionGui
         {
             try
             {
-
 
                 Estudiante estudiante = new Estudiante();
                 estudiante.TipoId = cmboTipoId.Text;

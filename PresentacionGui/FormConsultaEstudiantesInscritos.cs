@@ -20,7 +20,7 @@ namespace PresentacionGui
             InitializeComponent();
              cmboIes.Items.Add("Todos");
             cmboIes.Items.Add("IE NACIONAL LOPERENA");
-            cmboIes.Items.Add("PUDENCIA DAZA");
+            cmboIes.Items.Add("PRUDENCIA DAZA");
             cmboIes.Items.Add("SAN JOAQUIN");
             cmboIes.Items.Add("FRANCISCO MOLINA SANCHEZ");
             cmboIes.DropDownStyle = ComboBoxStyle.DropDownList;

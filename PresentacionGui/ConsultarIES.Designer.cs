@@ -55,6 +55,7 @@ namespace PresentacionGui
             this.cmboIes.Name = "cmboIes";
             this.cmboIes.Size = new System.Drawing.Size(121, 21);
             this.cmboIes.TabIndex = 1;
+            this.cmboIes.SelectedIndexChanged += new System.EventHandler(this.cmboIes_SelectedIndexChanged);
             // 
             // label1
             // 
@@ -64,6 +65,7 @@ namespace PresentacionGui
             this.label1.Size = new System.Drawing.Size(68, 13);
             this.label1.TabIndex = 2;
             this.label1.Text = "Consulta IES";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // dataGVIes
             // 
@@ -72,6 +74,7 @@ namespace PresentacionGui
             this.dataGVIes.Name = "dataGVIes";
             this.dataGVIes.Size = new System.Drawing.Size(487, 113);
             this.dataGVIes.TabIndex = 3;
+            this.dataGVIes.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGVIes_CellContentClick);
             // 
             // lblConteocuposdisponibles
             // 
@@ -81,6 +84,7 @@ namespace PresentacionGui
             this.lblConteocuposdisponibles.Size = new System.Drawing.Size(19, 13);
             this.lblConteocuposdisponibles.TabIndex = 4;
             this.lblConteocuposdisponibles.Text = "----";
+            this.lblConteocuposdisponibles.Click += new System.EventHandler(this.lblConteocuposdisponibles_Click);
             // 
             // label2
             // 
@@ -90,6 +94,7 @@ namespace PresentacionGui
             this.label2.Size = new System.Drawing.Size(92, 13);
             this.label2.TabIndex = 5;
             this.label2.Text = "Cupos disponibles";
+            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // ConsultarIES
             // 

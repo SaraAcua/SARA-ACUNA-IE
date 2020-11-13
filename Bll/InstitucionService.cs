@@ -41,6 +41,30 @@ namespace Bll
             }
 
         }
+        public EstudianteResponse ConsultarEs()
+        {
+            try
+            {
+                List<Estudiante> estudiantes = institucionRepository.ConsultarAtodos();
+                if (estudiantes != null)
+                {
+                    var response = new EstudianteResponse(estudiantes);
+                    return response;
+                }
+                else
+                {
+                    var response = new EstudianteResponse("No se encontro el registro ");
+                    return response;
+                }
+
+            }
+            catch (Exception e)
+            {
+                var response = new EstudianteResponse("Error de Aplicacion:" + e.Message);
+                return response;
+            }
+
+        }
         public IntitucionResponse ConsultarTipo(string tipo)
         {
             try
@@ -69,6 +93,12 @@ namespace Bll
         {
             int conteo = 0;
             conteo = institucionRepository.ContarCupo(cupo);
+            return conteo;
+        }
+        public int ContarEs(int Estudiante)
+        {
+            int conteo = 0;
+            conteo = institucionRepository.ContarCupo(Estudiante);
             return conteo;
         }
         public string Guardar(Estudiante estudiante)
@@ -119,6 +149,37 @@ namespace Bll
         {
             this.institucion = institucion;
         }
-    }
 
+    
+
+    }
+    public class EstudianteResponse
+    {
+        Estudiante estudiante;
+
+        public List<Estudiante> Estudiantes { get; set; }
+        public string MessageEs { get; set; }
+        public bool ErrorEs { get; set; }
+
+
+        public EstudianteResponse(string message)
+        {
+            ErrorEs = true;
+            MessageEs = message;
+        }
+        public EstudianteResponse(List<Estudiante> estudiante)
+        {
+            Estudiantes = estudiante;
+            ErrorEs = false;
+        }
+
+        public EstudianteResponse(Estudiante estudiante)
+        {
+            this.estudiante = estudiante;
+        }
+
+
+
+
+    }
 }

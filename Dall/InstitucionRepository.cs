@@ -31,6 +31,21 @@ namespace Dall
             file.Close();
             return lista;
         }
+        public List<Estudiante> ConsultarTodosEs()
+        {
+            List<Estudiante> lista = new List<Estudiante>();
+            FileStream file = new FileStream(FileNameEs, FileMode.OpenOrCreate, FileAccess.Read);
+            StreamReader reader = new StreamReader(file);
+            string linea = string.Empty;
+            while ((linea = reader.ReadLine()) != null)
+            {
+                Institucion institucion = Map(linea);
+                lista.Add(estudiante);
+            }
+            reader.Close();
+            file.Close();
+            return lista;
+        }
 
 
         public void Guardar(Estudiante estudiante)
@@ -116,9 +131,22 @@ namespace Dall
                  select c).ToList();
             return institucionesFiltradas;
         }
+        public List<Estudiante> FiltroPorTipoIes(string tipo)
+        {
+            List<Estudiante> estudiantes= ConsultarTodosEs();
+            List<Estudiante> estudiantesFiltradas =
+                (from c in estudiantes
+                 where c.Institucion == tipo
+                 select c).ToList();
+            return estudiantesFiltradas;
+        }
         public int ContarCupo(int cupo)
         {
             return ConsultarTodos().Count(p => p.CupoDisponible.Equals(cupo));
+        }
+        public int ContarEs(string estudiante)
+        {
+            return ConsultarTodosEs().Count(p => p.Nombre.Equals(estudiante));
         }
     }
 

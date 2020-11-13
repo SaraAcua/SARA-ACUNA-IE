@@ -48,11 +48,21 @@ namespace PresentacionGui
                 InstitucionService service = new InstitucionService();
                 string mensaje = service.Guardar(estudiante);
                 MessageBox.Show(mensaje);
+                LimpiarTxt();
             }
             catch
             {
                 MessageBox.Show("Datos imcompletos", "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
+
+        }
+        void LimpiarTxt()
+        {
+            cmboTipoId.Text = "";
+            txtId.Text = "";
+            txtNombre.Text = "";
+            cmboGrado.Text = "";
+            cmboInstitucion.Text = "";
 
         }
     }

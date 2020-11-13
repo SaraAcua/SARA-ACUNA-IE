@@ -27,6 +27,11 @@ namespace Entity
         {
             return $"tipoid: {TipoId}-identificacion: {NumeroId} - nombre:{Nombre}-grado:{Grado}-institucion{Institucion}";
         }
+
+        public static implicit operator List<object>(Estudiante v)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
 

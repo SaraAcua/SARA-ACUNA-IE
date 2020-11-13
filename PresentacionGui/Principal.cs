@@ -45,7 +45,8 @@ namespace PresentacionGui
 
         private void btnConsultaEstudiantefIL_Click(object sender, EventArgs e)
         {
-
+            FormConsultaEstudiantesInscritos form = new FormConsultaEstudiantesInscritos();
+            AbrirFormEnPanel(form);
         }
     }
 }

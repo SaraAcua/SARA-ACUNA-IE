@@ -99,6 +99,30 @@ namespace PresentacionGui
             }
         }
 
+        private void lblConteocuposdisponibles_Click(object sender, EventArgs e)
+        {
+
         }
+
+        private void dataGVIes_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cmboIes_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+    }
     }
 

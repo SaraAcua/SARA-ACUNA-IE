@@ -36,5 +36,16 @@ namespace PresentacionGui
             ConsultarIES iES = new ConsultarIES();
             AbrirFormEnPanel(iES);
         }
+
+        private void btnRegistroEstudiante_Click(object sender, EventArgs e)
+        {
+            FormRegistroEstudiante form = new FormRegistroEstudiante();
+            AbrirFormEnPanel(form);
+        }
+
+        private void btnConsultaEstudiantefIL_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

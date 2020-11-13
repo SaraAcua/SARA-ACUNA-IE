@@ -31,10 +31,10 @@ namespace PresentacionGui
         {
             this.panel1 = new System.Windows.Forms.Panel();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.pnlContenedor = new System.Windows.Forms.Panel();
             this.btnConsultaIES = new System.Windows.Forms.Button();
             this.btnRegistroEstudiante = new System.Windows.Forms.Button();
             this.btnConsultaEstudiantefIL = new System.Windows.Forms.Button();
+            this.pnlContenedor = new System.Windows.Forms.Panel();
             this.flowLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -59,14 +59,6 @@ namespace PresentacionGui
             this.flowLayoutPanel1.Size = new System.Drawing.Size(200, 380);
             this.flowLayoutPanel1.TabIndex = 1;
             // 
-            // pnlContenedor
-            // 
-            this.pnlContenedor.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlContenedor.Location = new System.Drawing.Point(200, 57);
-            this.pnlContenedor.Name = "pnlContenedor";
-            this.pnlContenedor.Size = new System.Drawing.Size(568, 380);
-            this.pnlContenedor.TabIndex = 2;
-            // 
             // btnConsultaIES
             // 
             this.btnConsultaIES.Location = new System.Drawing.Point(3, 3);
@@ -85,6 +77,7 @@ namespace PresentacionGui
             this.btnRegistroEstudiante.TabIndex = 1;
             this.btnRegistroEstudiante.Text = "Registrar Estudiante";
             this.btnRegistroEstudiante.UseVisualStyleBackColor = true;
+            this.btnRegistroEstudiante.Click += new System.EventHandler(this.btnRegistroEstudiante_Click);
             // 
             // btnConsultaEstudiantefIL
             // 
@@ -92,8 +85,17 @@ namespace PresentacionGui
             this.btnConsultaEstudiantefIL.Name = "btnConsultaEstudiantefIL";
             this.btnConsultaEstudiantefIL.Size = new System.Drawing.Size(191, 66);
             this.btnConsultaEstudiantefIL.TabIndex = 2;
-            this.btnConsultaEstudiantefIL.Text = "Consulta filtrada";
+            this.btnConsultaEstudiantefIL.Text = "Consulta Estudiantes";
             this.btnConsultaEstudiantefIL.UseVisualStyleBackColor = true;
+            this.btnConsultaEstudiantefIL.Click += new System.EventHandler(this.btnConsultaEstudiantefIL_Click);
+            // 
+            // pnlContenedor
+            // 
+            this.pnlContenedor.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlContenedor.Location = new System.Drawing.Point(200, 57);
+            this.pnlContenedor.Name = "pnlContenedor";
+            this.pnlContenedor.Size = new System.Drawing.Size(568, 380);
+            this.pnlContenedor.TabIndex = 2;
             // 
             // Principal
             // 

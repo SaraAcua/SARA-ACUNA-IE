@@ -34,18 +34,25 @@ namespace PresentacionGui
 
         private void btnConsultarIes_Click(object sender, EventArgs e)
         {
-
-            if (cmboIes.Text.Equals("Todos"))
+            try
             {
-                ConsultarTodos();
-                ContarCupoSDisponible();
-            }
-            else
-            {
-                FiltroTipo();
-                ContarCupoSDisponible();
-            }
 
+
+                if (cmboIes.Text.Equals("Todos"))
+                {
+                    ConsultarTodos();
+                    ContarCupoSDisponible();
+                }
+                else
+                {
+                    FiltroTipo();
+                    ContarCupoSDisponible();
+                }
+            }
+            catch
+            {
+
+            }
 
         }
 

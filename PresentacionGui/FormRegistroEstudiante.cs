@@ -44,8 +44,7 @@ namespace PresentacionGui
                 {
                     MessageBox.Show("Datos imcompletos", "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                }
-                if(! service.ValidarDisponibilidad(cmboInstitucion.Text)) 
+                }else if (!service.ValidarDisponibilidad(cmboInstitucion.Text))
                 {
                     MessageBox.Show("No hay cupos disponibles en " + cmboInstitucion.Text, "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }

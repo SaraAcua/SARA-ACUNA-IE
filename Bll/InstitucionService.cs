@@ -86,7 +86,7 @@ namespace Bll
         {
             try
             {
-                List<Estudiante> estudiantes = institucionRepository.ConsultarAtodos();
+                List<Estudiante> estudiantes = institucionRepository.ConsultarAtodosEstudiantes();
                 if (estudiantes != null)
                 {
                     var response = new EstudianteResponse(estudiantes);

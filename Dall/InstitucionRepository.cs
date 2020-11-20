@@ -96,7 +96,7 @@ namespace Dall
             return idEstudiante == idEstudianteBuscado;
 
         }
-        public List<Estudiante> ConsultarAtodos()
+        public List<Estudiante> ConsultarAtodosEstudiantes()
         {
             List<Estudiante> estudiantes = new List<Estudiante>();
             FileStream file = new FileStream(FileNameEs, FileMode.OpenOrCreate, FileAccess.Read);
@@ -115,8 +115,8 @@ namespace Dall
         }
         public Estudiante Buscar(string numeroId)
         {
-            List<Estudiante> liquidacionCuotaModeradoras = ConsultarAtodos();
-            foreach (var item in liquidacionCuotaModeradoras)
+            List<Estudiante> estudiantes = ConsultarAtodosEstudiantes();
+            foreach (var item in estudiantes)
             {
                 if (Encontrado(item.NumeroId, numeroId))
                 {

@@ -62,6 +62,7 @@ namespace PresentacionGui
                     MessageBox.Show(" Se registro el estudiante correctamente, cupos disponibles: "+service.CupoDisponible(cmboInstitucion.Text)," Informacion", MessageBoxButtons.OK);
                     LimpiarTxt();
                     
+                    
                 }
 
             }

@@ -106,7 +106,7 @@ namespace PresentacionGui
             this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.panel1);
             this.Name = "Principal";
-            this.Text = "Form1";
+            this.Text = "IE";
             this.flowLayoutPanel1.ResumeLayout(false);
             this.ResumeLayout(false);
 

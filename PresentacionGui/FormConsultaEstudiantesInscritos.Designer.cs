@@ -29,7 +29,7 @@ namespace PresentacionGui
         /// </summary>
         private void InitializeComponent()
         {
-            this.label2 = new System.Windows.Forms.Label();
+            this.lblConteo = new System.Windows.Forms.Label();
             this.lblConteocuposdisponibles = new System.Windows.Forms.Label();
             this.dataGVEs = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
@@ -38,14 +38,14 @@ namespace PresentacionGui
             ((System.ComponentModel.ISupportInitialize)(this.dataGVEs)).BeginInit();
             this.SuspendLayout();
             // 
-            // label2
+            // lblConteo
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(259, 300);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(92, 13);
-            this.label2.TabIndex = 11;
-            this.label2.Text = "Cupos disponibles";
+            this.lblConteo.AutoSize = true;
+            this.lblConteo.Location = new System.Drawing.Point(259, 300);
+            this.lblConteo.Name = "lblConteo";
+            this.lblConteo.Size = new System.Drawing.Size(103, 13);
+            this.lblConteo.TabIndex = 11;
+            this.lblConteo.Text = "Estudiantes inscritos";
             // 
             // lblConteocuposdisponibles
             // 
@@ -97,7 +97,7 @@ namespace PresentacionGui
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.ClientSize = new System.Drawing.Size(568, 380);
-            this.Controls.Add(this.label2);
+            this.Controls.Add(this.lblConteo);
             this.Controls.Add(this.lblConteocuposdisponibles);
             this.Controls.Add(this.dataGVEs);
             this.Controls.Add(this.label1);
@@ -114,7 +114,7 @@ namespace PresentacionGui
 
         #endregion
 
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lblConteo;
         private System.Windows.Forms.Label lblConteocuposdisponibles;
         private System.Windows.Forms.DataGridView dataGVEs;
         private System.Windows.Forms.Label label1;

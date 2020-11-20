@@ -21,7 +21,10 @@ namespace Entity
             CupoDisponible = cupoDisponible;
         }
 
-
+        public string FormatoArchivo()
+        {
+            return Codigo + ";" + NombreInstitucion + ";" + CuposAprobados + ";" + CupoDisponible;
+        }
 
         public string Codigo { get; set; }
         public string NombreInstitucion { get; set; }

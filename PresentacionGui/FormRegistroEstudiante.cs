@@ -19,7 +19,7 @@ namespace PresentacionGui
             InitializeComponent();
            
             cmboInstitucion.Items.Add("IE NACIONAL LOPERENA");
-            cmboInstitucion.Items.Add("PUDENCIA DAZA");
+            cmboInstitucion.Items.Add("PRUDENCIA DAZA");
             cmboInstitucion.Items.Add("SAN JOAQUIN");
             cmboInstitucion.Items.Add("FRANCISCO MOLINA SANCHEZ");
             cmboInstitucion.DropDownStyle = ComboBoxStyle.DropDownList;
@@ -36,24 +36,38 @@ namespace PresentacionGui
         private void btnRegistrar_Click(object sender, EventArgs e)
 
         {
+            InstitucionService service = new InstitucionService();
             try
             {
+                if (cmboTipoId.Text.Equals("") || txtId.Text.Equals("") || txtNombre.Text.Equals("") ||
+                    cmboGrado.Text.Equals("") || cmboInstitucion.Text.Equals(""))
+                {
+                    MessageBox.Show("Datos imcompletos", "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                Estudiante estudiante = new Estudiante();
-                estudiante.TipoId = cmboTipoId.Text;
-                estudiante.NumeroId = txtId.Text;
-                estudiante.Nombre = txtNombre.Text;
-                estudiante.Grado = cmboGrado.Text;
-                estudiante.Institucion = cmboInstitucion.Text;
-                InstitucionService service = new InstitucionService();
-                string mensaje = service.Guardar(estudiante);
-                MessageBox.Show(mensaje);
-                LimpiarTxt();
+                }
+                if(! service.ValidarDisponibilidad(cmboInstitucion.Text)) 
+                {
+                    MessageBox.Show("No hay cupos disponibles en " + cmboInstitucion.Text, "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    Estudiante estudiante = new Estudiante();
+                    estudiante.TipoId = cmboTipoId.Text;
+                    estudiante.NumeroId = txtId.Text;
+                    estudiante.Nombre = txtNombre.Text;
+                    estudiante.Grado = cmboGrado.Text;
+                    estudiante.Institucion = cmboInstitucion.Text; 
+                    service.Guardar(estudiante);
+                    ActualizarCuposDisponibles();
+                    MessageBox.Show(" Se registro el estudiante correctamente, cupos disponibles: "+service.CupoDisponible(cmboInstitucion.Text)," Informacion", MessageBoxButtons.OK);
+                    LimpiarTxt();
+                    
+                }
+
             }
+
             catch
-            {
-                MessageBox.Show("Datos imcompletos", "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
+            { }
 
         }
         void LimpiarTxt()
@@ -64,6 +78,11 @@ namespace PresentacionGui
             cmboGrado.Text = "";
             cmboInstitucion.Text = "";
 
+        }
+        public void ActualizarCuposDisponibles()
+        {
+            InstitucionService service = new InstitucionService();
+            string message = service.Modificar(cmboInstitucion.Text);
         }
     }
 }

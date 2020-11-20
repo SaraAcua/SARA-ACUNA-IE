@@ -41,11 +41,28 @@ namespace Bll
             }
 
         }
-        public EstudianteResponse ConsultarEs()
+        public bool ValidarExisteArchivo()
+        {
+            if (institucionRepository.ConsultarTodos().Count()==0)
+            {
+                return true;
+            }
+            else {
+
+                return false;           
+            }
+        }
+
+        public bool ValidarDisponibilidad(string tipoIE)
+        {
+            return institucionRepository.ValidarDisponibilidad(tipoIE);
+        }
+
+        public EstudianteResponse ConsultarEs(string tipo)
         {
             try
             {
-                List<Estudiante> estudiantes = institucionRepository.ConsultarAtodos();
+                List<Estudiante> estudiantes = institucionRepository.FiltroPorTipoIes(tipo);
                 if (estudiantes != null)
                 {
                     var response = new EstudianteResponse(estudiantes);
@@ -113,6 +130,11 @@ namespace Bll
             }
 
         }
+
+        public int CupoDisponible(string tipoIE)
+        {
+            return institucionRepository.CupoDisponible(tipoIE);
+        }
         public int Contarcupo(int cupo)
         {
             int conteo = 0;
@@ -122,7 +144,7 @@ namespace Bll
         public int ContarEs(string estudiante)
         {
             int conteo = 0;
-            conteo = institucionRepository.ContarEs(estudiante);
+            conteo = institucionRepository.ContarEstudiante(estudiante);
             return conteo;
         }
         
@@ -136,6 +158,7 @@ namespace Bll
                 if (institucionRepository.Buscar(estudiante.NumeroId) == null)
                 {
                     institucionRepository.Guardar(estudiante);
+                   
 
                     return "Se guardaron los datos de manera exitosa";
                 }
@@ -147,7 +170,11 @@ namespace Bll
             }
         }
 
-
+        public string Modificar(string institucion)
+        {
+          
+            return institucionRepository.Modificar(institucion);
+        }
 
 
     }
